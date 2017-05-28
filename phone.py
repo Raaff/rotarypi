@@ -34,7 +34,7 @@ class Dial():
 
 	def startcalling(self):
 		self.calling = True
-		self.player = subprocess.Popen(["mpg123", "/home/pi/mp3/dial.mp3", "-q"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+		self.player = subprocess.Popen(["mpg123", "/home/pi/rotarypi/mp3/dial.mp3", "-q"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 	def stopcalling(self):
 		self.calling = False
@@ -53,14 +53,14 @@ class Dial():
 			self.pulses = 0
 			if self.number == "1178":
 				shutdown()
-			elif os.path.isfile("/home/pi/mp3/" + self.number + ".mp3"):
+			elif os.path.isfile("/home/pi/rotarypi/mp3/" + self.number + ".mp3"):
 				print("start player with number = %s" % self.number)
 				try:
 					self.player.kill()
 				except:
 					pass
 				
-				self.player = subprocess.Popen(["mpg123", "/home/pi/mp3/" + self.number + ".mp3", "-q"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+				self.player = subprocess.Popen(["mpg123", "/home/pi/rotarypi/mp3/" + self.number + ".mp3", "-q"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 		self.counting = False
 
