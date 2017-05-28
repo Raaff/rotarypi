@@ -12,7 +12,7 @@ Optional: Remove the ringer to get more space inside the phone, add a 18650 batt
 
 Install python3, gpiozero, mpg123 and optionally tts (apt-get install ...)
 
-Install the python program
+Install this python program, make it executable (chmod +x ./rotarypi/phone.py)
 
 Add mp3s, named [number to dial].mp3
 
